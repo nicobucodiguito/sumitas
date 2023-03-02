@@ -8,15 +8,18 @@
     <title>Sumitas: El juego</title>
 </head>
 <body>
+
     <h1>Sumitas: El juego</h1>
     <p>Sumitas: El juego(tm) consiste en realizar las operaciones matemáticas que aparecen en pantalla, escribiendo
         su respuesta en el campo de texto que se encuentra en pantalla.</p>
     <p>
         El jugador posee 15 segundos para lograr el mayor puntaje posible, de no lograr un puntaje apropiado, serán tomadas
         las medidas correspondientes con las autoridades locales.
-    </p>    
+    </p>
+    
     <p id="operacion"></p> <!--Esto va a mostrar la operación a realizar-->
     <p id="message"></p> <!-- Esto muestra el puntaje total en el juego y al finalizar -->
+    <!--El sistema del juego, se puede separar del div si llegase a necesitarse más independencia para CSS o afines-->
     <div id="juego">
         <input type="text" id="valor"/>
         <button type="button" id="start">Empezar</button>
@@ -26,6 +29,7 @@
     <script src="app.js"></script>
     <!--fault tolerance-->
     <noscript>Necesitás activar JavaScript posho!</noscript>
+
 </body>
 
 <footer>
