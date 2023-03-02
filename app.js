@@ -14,7 +14,7 @@ function numeros_aleatorios(){
 
 function terminar_juego(){
     document.getElementById("valor").disabled = true;
-    message.innerText = `Juego terminado! Tu puntaje es de: ${puntaje} puntos. Felicidades!`
+    message.innerText = `¡Juego terminado! Tu puntaje fue de ${puntaje} puntos. ¡Felicidades! o ¡Lástima!`
 }
 
 //ESTO FUNCIONA PERO TENGO QUE REPASAR LAS FUNCIONES ANONIMAS XD
@@ -22,7 +22,7 @@ document.getElementById("start").addEventListener("click", () => {
     numeros_aleatorios()
     //esto presenta el numeroFinal como texto sobre el <p> "operacion" 
     numGenerado.innerText = `${num1} + ${num2}`;
-    setTimeout(terminar_juego, 10000);
+    setTimeout(terminar_juego, 15000);
     document.getElementById("start").disabled = true;
 });
 
@@ -36,7 +36,7 @@ valorIntroducido.addEventListener("input", () => {
         console.log(puntaje);
         numeros_aleatorios();
         numGenerado.innerText = `${num1} + ${num2}`;
-        message.innerText = `Tu puntaje actual es: ${puntaje}`
+        message.innerText = `Puntaje: ${puntaje}`
         }
 
 })
