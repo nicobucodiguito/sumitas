@@ -13,7 +13,7 @@ function numeros_aleatorios(){
     num1 = Math.round(Math.random() * 20);
     num2 = Math.round(Math.random() * 20);
     return num1, num2;
-} 
+}
 
 //funcion terminar juego, una vez que pasan 15s se ejecuta y cierra el input field ademas de dar
 //el mensaje de terminado, adjuntando el puntaje total
@@ -24,7 +24,8 @@ function terminar_juego(){
 
 //funca pero estaría para repasar las Fat Arrow o funciones anónimas..
 document.getElementById("start").addEventListener("click", () => {
-    numeros_aleatorios()
+    console.log(`hola :-)`);
+    numeros_aleatorios();
     //esto presenta el numGenerado como texto sobre el <p> "operacion" 
     numGenerado.innerText = `${num1} + ${num2}`;
     //acá empieza el timer de los 15s hasta que termina el juego
@@ -49,7 +50,9 @@ valorIntroducido.addEventListener("input", () => {
         numeros_aleatorios();
         numGenerado.innerText = `${num1} + ${num2}`;
         //coso de puntaje, nada wow
-        message.innerText = `Puntaje: ${puntaje}`
+        message.innerText = `Puntaje: ${puntaje}`;
+        //esto clearea el input a medida que se aciertan los números
+        valorIntroducido.value = "";
         }
 
 })
