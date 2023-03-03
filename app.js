@@ -2,11 +2,12 @@
 const numGenerado = document.getElementById("operacion");
 const valorIntroducido = document.getElementById("valor");
 const message = document.getElementById('message');
+const switcher = document.getElementById('switcher');
 
 //coso inicial de puntaje, no puede empezar con 0 porque se multiplica por sí mismo
 //se podría ver de hacer un mejor sistema
 let puntaje = 1;
-
+document.getElementById("valor").disabled = true;
 
 //funcion que genera y returnea dos ranInts
 function numeros_aleatorios(){
@@ -19,11 +20,13 @@ function numeros_aleatorios(){
 //el mensaje de terminado, adjuntando el puntaje total
 function terminar_juego(){
     document.getElementById("valor").disabled = true;
-    message.innerText = `¡Juego terminado! Tu puntaje fue de ${puntaje} puntos. ¡Felicidades! o ¡Lástima!`
+    message.innerText = `¡Juego terminado! Tu puntaje fue de ${puntaje} puntos. ¡Felicidades!`
 }
 
 //funca pero estaría para repasar las Fat Arrow o funciones anónimas..
 document.getElementById("start").addEventListener("click", () => {
+    document.getElementById("valor").disabled = false;
+    message.innerText = `Puntaje: `;
     console.log(`hola :-)`);
     numeros_aleatorios();
     //esto presenta el numGenerado como texto sobre el <p> "operacion" 
@@ -56,3 +59,26 @@ valorIntroducido.addEventListener("input", () => {
         }
 
 })
+
+//dark mode switcher, estado inicial definido en el style
+switcher.addEventListener('click', function() {
+
+    document.body.classList.toggle('modo-oscuro');
+    document.body.classList.toggle('modo-claro');
+
+    //variable for checking the className with a conditional to determine the current CSS theme, and update the button label
+    const className = document.body.className;
+    if(className == "modo-oscuro") {
+        this.textContent = "Tocame para el modo claro!";
+    } else {
+        this.textContent = "Tocame para el modo oscuro!";
+    }
+
+    //console log to check the current class name
+    console.log('current class name: ' + className);
+
+});
+
+//INTRODUCIR DARK MODE Y QUIZA VER DE INTRODUCIR ALGUNA CUE VISUAL CUANDO SE INTRODUCE EL NÚMERO CORRECTAMENTE
+//QUE SE LIGHTEE VERDE ALGO? O ALGUN SONIDITO TAMBIÉN ESTARÍA BUENO PARA IR PROBANDO
+//PONER UN POCO MÁS LINDO EL SITIO. NO SOLO STYLING, ALGÚN FONDO ESTARÍA COPADO PARA PROBAR UN POCO EL CSS

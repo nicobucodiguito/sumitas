@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 
     <title>Sumitas: El juego™</title>
 </head>
-<body>
+
+<body class="modo-claro">
 
     <h1>Sumitas: El juego™ </h1>
     <p>Sumitas: El juego™  consiste en realizar las operaciones matemáticas que aparecen en pantalla, escribiendo
@@ -23,14 +24,9 @@
     <p id="message"></p> <!-- Esto muestra el puntaje total en el juego y al finalizar -->
     <!--El sistema del juego, se puede separar del div si llegase a necesitarse más independencia para CSS o afines-->
     <div id="juego">
-        <input type="text" id="valor" class="col-sm-2"/>
+        <input type="text" id="valor" class="col-sm-2" for="inputSuccess2"/>
         <button type="button" id="start" class="btn btn-dark">Empezar</button>
     </div>
-    
-    <!--js source-->
-    <script src="app.js"></script>
-    <!--fault tolerance-->
-    <noscript>Necesitás activar JavaScript posho!</noscript>
 
 </body>
 
@@ -38,7 +34,15 @@
     <h5>Sumitas: El juego™  no se hace cargo de daños o perjuicios de ningún tipo, daño psicológico,
          físico o alteraciones en la psiquis del jugador.
     </h5>
-    <h6>Patente pendiente</h6>
-    <h6>Buquito Producciones™ 2023-2023 </h6>
+    <div class="container" id="container_boton" style="text-align: center;">
+        <button type="button" id="switcher" class="btn btn-dark">Apretame para oscurecer!</button>
+    </div>
+    <h6><small><i>Patente pendiente</i></small></h6>
+    <h6><small><i>Buquito Producciones™ 2023-2023</i></small></h6>
+    <!--js source-->
+    <script src="app.js"></script>
+    <!--fault tolerance-->
+    <noscript>Necesitás activar JavaScript posho!</noscript>
+
 </footer>
 </html>
